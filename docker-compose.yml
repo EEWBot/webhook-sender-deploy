@@ -1,0 +1,20 @@
+services:
+  webhooksender:
+    image: ghcr.io/eewbot/webhook-sender:master
+    hostname: webhooksender
+    container_name: webhooksender__webhooksender
+    restart: unless-stopped
+
+    environment:
+      SENDER_IPS: ${SENDER_IPS}
+      RETRY_IPS: ${RETRY_IPS}
+      LISTEN: ${LISTEN}
+
+    command: /usr/bin/webhook-sender
+
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+
+    network_mode: host
