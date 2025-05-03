@@ -1,6 +1,6 @@
 services:
   webhooksender:
-    image: ghcr.io/eewbot/webhook-sender:0.2.0
+    image: ghcr.io/eewbot/webhook-sender:v0.3.0
     hostname: webhooksender
     container_name: webhooksender__webhooksender
     restart: unless-stopped
@@ -9,6 +9,7 @@ services:
       SENDER_IPS: ${SENDER_IPS}
       RETRY_IPS: ${RETRY_IPS}
       LISTEN: ${LISTEN}
+      AUTH_TOKEN: ${AUTH_TOKEN}
 
     command: /usr/bin/webhook-sender
 
