@@ -1,6 +1,6 @@
 services:
   webhooksender:
-    image: ghcr.io/eewbot/webhook-sender:v0.3.0
+    image: ghcr.io/eewbot/webhook-sender:v0.4.0
     hostname: webhooksender
     container_name: webhooksender__webhooksender
     restart: unless-stopped
